@@ -11,6 +11,15 @@
 
 ---
 
+## Requirements
+
+| Runtime  | Required      | Tested with |
+|----------|---------------|-------------|
+| Python   | ≥ 3.6         | 3.9.6       |
+| Node.js  | ≥ 20.19.0     | v24.1.0     |
+
+---
+
 ## A — Mystic Waves
 
 ### How to run
@@ -24,10 +33,6 @@ Then follow the interactive prompts:
 1. Enter the number of test cases (1–100)
 2. For each test case, enter two space-separated integers (e.g., `5 3`)
 
-### Assumptions
-- Input `t` is between 1 and 100
-- Each test case is exactly two integers separated by a space
-- Output is `x` when `n` is odd, `0` when `n` is even
 
 ---
 
@@ -46,12 +51,6 @@ Then follow the interactive prompts:
 1. Enter the number of test cases (1–1000)
 2. For each test case, enter the total propulsion units `n` (1–10^18)
 
-### Assumptions
-- Input `t` is between 1 and 1000
-- `n` can be up to 10^18 (uses Python big integers)
-- If `n` is odd or `n == 2`, no valid configuration exists → outputs `-1`
-- Each spacecraft uses at least 2 wings (+ 2 body = 4 units minimum), so `n` must be ≥ 4 and even
-- If no valid b_max is found, the program naturally handles edge cases through integer constraints
 
 ---
 
@@ -90,14 +89,9 @@ open dist/index.html
 
 **Other commands:**
 
-| Command | Description |
-|---------|-------------|
+| Command         | Description                         |
+|-----------------|-------------------------------------|
 | `npm run build` | Type-check and build for production |
-| `npm run preview` | Preview the production build |
-| `npm run lint` | Run ESLint |
+| `npm run dev`   | For dev                             |
+| `npm run lint`  | Run ESLint                          |
 
-### Assumptions
-- The product data and cart API are mocked (see `src/api/mockApi.ts`)
-- The mock API has a 10% failure rate to demonstrate error handling
-- Cart count resets on page reload (no persistent backend)
-- Product images use `placehold.co` placeholder URLs
